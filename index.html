@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Michael Akpan - Software Developer & Bookkeeping Specialist Portfolio. Expert in .NET, C#, Blazor, and Data Management.">
+  <title>Michael Akpan | Software Developer & Bookkeeper</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/typewriter-effect@2.18.0/dist/core.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      position: relative;
+      scroll-behavior: smooth;
+    }
+
+    /* 🌑 CINEMATIC GRADIENT BACKGROUND */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0, 40, 120, 0.45), rgba(80, 0, 0, 0.45));
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at top, rgba(255, 255, 255, 0.05), transparent 60%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .hero-fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 20rem;
+      z-index: 1000;
+      background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1950&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+    }
+
+    .header-space {
+      height: 20rem;
+    }
+
+    #typewriter {
+      min-height: 1.5em; 
+      display: inline-block;
+      width: 100%;
+    }
+
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 50;
+      display: none;
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    #scrollTopBtn:hover {
+      background-color: #1d4ed8;
+      transform: translateY(-3px);
+    }
+
+    #tsparticles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+    }
+
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    }
+
+    .tech-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.1rem 0.5rem;
+      border-radius: 9999px;
+      text-transform: uppercase;
+    }
+
+    .exp-item {
+      position: relative;
+    }
+    
+    .exp-dot {
+      position: absolute;
+      left: -2.5rem;
+      top: 0.25rem;
+      width: 1rem;
+      height: 1rem;
+      background-color: #2563eb;
+      border-radius: 9999px;
+      border: 3px solid white;
+      box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
+      z-index: 20;
+    }
+  </style>
+
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
+      window.onscroll = () => {
+        scrollTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+      };
+      scrollTopBtn.onclick = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
+
+      new Typewriter(document.getElementById('typewriter'), {
+        strings: [
+          'Software Developer', 
+          '.NET & Blazor Enthusiast', 
+          'Bookkeeping Professional', 
+          'Data Entry Specialist'
+        ],
+        autoStart: true,
+        loop: true,
+        delay: 75,
+      });
+
+      tsParticles.load("tsparticles", {
+        particles: {
+          color: { value: "#ffffff" },
+          links: { enable: true, color: "#ffffff", opacity: 0.1 },
+          move: { enable: true, speed: 0.6 },
+          number: { value: 40 },
+          size: { value: 2 },
+          opacity: { value: 0.2 }
+        }
+      });
+    });
+  </script>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+<div id="tsparticles"></div>
+<button id="scrollTopBtn">↑ Top</button>
+
+<header class="hero-fixed flex items-center justify-center text-white shadow-xl">
+  <div class="hero-overlay"></div>
+  <div class="hero-content text-center p-6 w-full max-w-2xl">
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-2">Michael Akpan</h1>
+    <div class="text-lg md:text-2xl text-blue-300 font-medium">
+        <span id="typewriter"></span>
+    </div>
+  </div>
+</header>
+
+<div class="header-space"></div>
+
+<main class="max-w-5xl mx-auto px-4 py-12 space-y-12">
+
+  <section class="bg-white rounded-2xl shadow-lg p-8 card-hover">
+    <h2 class="text-3xl font-bold text-blue-800 border-b-4 border-blue-600 inline-block mb-8">About Me</h2>
+    <div class="flex flex-col md:flex-row items-center gap-10">
+      <div class="relative flex-shrink-0">
+        <img src="images/carter.jpg" alt="Michael Akpan" class="w-56 h-56 rounded-2xl object-cover border-4 border-blue-600 shadow-md" />
+        <div class="absolute -bottom-3 -right-3 bg-blue-600 text-white px-4 py-1 rounded-lg font-bold shadow-lg text-sm">Mr. Carter</div>
+      </div>
+      <div class="flex-1 space-y-4">
+        <p class="text-lg leading-relaxed text-gray-700">
+          I am a driven <strong>Software Developer</strong> and <strong>Bookkeeping Professional</strong> currently pursuing my BSc at BYU-Idaho. My expertise lies at the intersection of precise data management and modern application development.
+        </p>
+        <p class="text-lg leading-relaxed text-gray-700">
+          With a strong foundation in <strong>C# and the .NET ecosystem</strong>, I build scalable Web APIs and interactive Blazor applications. My background in hotel management and remote data entry has instilled a 99% accuracy standard that I carry into every line of code I write.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid md:grid-cols-2 gap-8">
+    <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+      <h3 class="text-2xl font-bold text-blue-800 mb-6 flex items-center">
+        <span class="mr-3">💻</span> Software Development
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <ul class="space-y-2 font-medium">
+          <li class="text-blue-700">✔ C# / .NET</li>
+          <li>✔ ASP.NET Core</li>
+          <li>✔ Blazor Framework</li>
+          <li>✔ Web API (CRUD)</li>
+        </ul>
+        <ul class="space-y-2 font-medium">
+          <li>✔ Python (OOP)</li>
+          <li>✔ SQL Databases</li>
+          <li>✔ HTML5 / Tailwind</li>
+          <li>✔ Git / GitHub</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+      <h3 class="text-2xl font-bold text-blue-800 mb-6 flex items-center">
+        <span class="mr-3">📊</span> Professional Services
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <ul class="space-y-2 font-medium">
+          <li class="text-blue-700">✔ Full-Charge Bookkeeping</li>
+          <li>✔ Intuit QuickBooks</li>
+          <li>✔ Financial Reporting</li>
+          <li>✔ Bank Reconciliation</li>
+        </ul>
+        <ul class="space-y-2 font-medium">
+          <li>✔ Data Entry (99% Acc)</li>
+          <li>✔ Genealogical Indexing</li>
+          <li>✔ Office Administration</li>
+          <li>✔ Budget Management</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="space-y-8">
+    <h2 class="text-3xl font-bold text-white border-b-4 border-blue-400 inline-block">Featured Projects</h2>
+    
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white p-6 rounded-xl shadow-md card-hover border-t-8 border-indigo-600">
+        <div class="flex justify-between items-start mb-4">
+          <h3 class="text-xl font-bold">Verse Vault: Scripture Journey</h3>
+          <span class="tech-tag bg-indigo-100 text-indigo-700">Full Stack</span>
+        </div>
+        <p class="text-gray-600 mb-4">A specialized application for scripture study and memorization. Features include personalized verse saving, progress tracking, and daily habit building.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+           <span class="tech-tag bg-gray-100">C#</span>
+           <span class="tech-tag bg-gray-100">ASP.NET</span>
+           <span class="tech-tag bg-gray-100">Auth Services</span>
+        </div>
+        <a href="https://castyourdotnets-2frontend-production.up.railway.app/scriptures" target="_blank" class="text-indigo-600 font-bold hover:underline">Launch Application →</a>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow-md card-hover border-t-8 border-blue-600">
+        <div class="flex justify-between items-start mb-4">
+          <h3 class="text-xl font-bold">Connect Four Blazor App</h3>
+          <span class="tech-tag bg-purple-100 text-purple-700">Blazor</span>
+        </div>
+        <p class="text-gray-600 mb-4">A full-featured game built using .NET Blazor components. Includes a custom move history log and dynamic UI updates.</p>
+        <div class="flex gap-2">
+           <span class="tech-tag bg-gray-100">C#</span>
+           <span class="tech-tag bg-gray-100">.NET CLI</span>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow-md card-hover border-t-8 border-green-600">
+        <div class="flex justify-between items-start mb-4">
+          <h3 class="text-xl font-bold">ContosoPizza Web API</h3>
+          <span class="tech-tag bg-green-100 text-green-700">ASP.NET Core</span>
+        </div>
+        <p class="text-gray-600 mb-4">A robust RESTful API implementing full CRUD operations using controllers and data services.</p>
+        <div class="flex gap-2">
+           <span class="tech-tag bg-gray-100">Web API</span>
+           <span class="tech-tag bg-gray-100">SQL</span>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow-md card-hover border-t-8 border-yellow-500">
+        <h3 class="text-xl font-bold mb-4">AutoFinder Search</h3>
+        <p class="text-gray-600 mb-4">Interactive vehicle search project focusing on complex filtering logic and responsive front-end design.</p>
+        <a href="https://mikecarter216.github.io/wdd231/autofinder/index.html" target="_blank" class="text-blue-600 font-bold hover:underline">View Live Project →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white p-8 rounded-2xl shadow-lg">
+    <h2 class="text-3xl font-bold text-blue-800 border-b-4 border-blue-600 inline-block mb-10">Professional Experience</h2>
+
+    <div class="relative border-l-4 border-blue-600 ml-6 pl-8 space-y-12">
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <h3 class="text-xl font-bold text-gray-800">Bookkeeper</h3>
+        <p class="text-blue-600 font-semibold italic">Mountain River Partners (Remote) | Dec 2025 – Feb 2026</p>
+        <ul class="list-disc mt-3 text-gray-700 ml-5 space-y-1">
+          <li>Maintained 99% accuracy in high-volume financial record keeping.</li>
+          <li>Performed bank statement reconciliations and prepared detailed financial reports.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <h3 class="text-xl font-bold text-gray-800">Data Entry Specialist</h3>
+        <p class="text-blue-600 font-semibold italic">Springboard (Remote) | Sept 2025 – Dec 2025</p>
+        <ul class="list-disc mt-3 text-gray-700 ml-5 space-y-1">
+          <li>Verified and indexed genealogical records for the FamilySearch database with 99% accuracy.</li>
+          <li>Improved data quality control processes to resolve record inconsistencies.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <h3 class="text-xl font-bold text-gray-800">Manager / Data Administration</h3>
+        <p class="text-blue-600 font-semibold italic">Tropical Hotels Nigeria | July 2022 – May 2025</p>
+        <ul class="list-disc mt-3 text-gray-700 ml-5 space-y-1">
+          <li>Increased customer satisfaction ratings by 20% through optimized administrative workflows.</li>
+          <li>Managed weekly operations budget of $1,000+ and all financial records.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <h3 class="text-xl font-bold text-gray-800">Voluntary Missionary Service</h3>
+        <p class="text-blue-600 font-semibold italic">LDS Mission – Ibadan, Nigeria | Dec 2019 – Dec 2021</p>
+        <ul class="list-disc mt-3 text-gray-700 ml-5 space-y-1">
+          <li>Led and trained large volunteer teams across multiple cities.</li>
+          <li>Conducted weekly leadership council meetings and outreach training sessions.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid md:grid-cols-2 gap-8">
+    <div class="bg-white p-8 rounded-2xl shadow-lg">
+      <h2 class="text-2xl font-bold text-blue-800 mb-6">Education</h2>
+      <div class="space-y-6">
+        <div>
+          <h4 class="font-bold text-lg">BYU-Idaho</h4>
+          <p class="text-gray-600 italic font-medium">BSc Software Development (Anticipated 2026)</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg">Rivers State Polytechnic</h4>
+          <p class="text-gray-600 italic font-medium">HND Computer Science (2018)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white p-8 rounded-2xl shadow-lg">
+      <h2 class="text-2xl font-bold text-blue-800 mb-6">Certifications</h2>
+      <div class="flex flex-col gap-4">
+        <a href="https://drive.google.com/drive/folders/1KSZyZkqoY1lEBxzDr_aWXpSg7thefNrw?usp=drive_link" target="_blank" class="p-4 border-2 border-blue-100 rounded-xl hover:bg-blue-50 hover:border-blue-300 transition-all font-bold text-blue-700">🏆 Intuit Bookkeeping Certification</a>
+        <a href="https://drive.google.com/drive/folders/1wUP2dZvB04rlJguFIPm-Zo_9BMMCveEi?usp=drive_link" target="_blank" class="p-4 border-2 border-blue-100 rounded-xl hover:bg-blue-50 hover:border-blue-300 transition-all font-bold text-blue-700">🏆 BYU-Idaho Web Development</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="text-center space-y-8">
+    <h2 class="text-3xl font-bold text-white">Professional Credentials</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-4 px-4">
+      <div class="bg-white p-2 rounded-xl shadow-md flex items-center justify-center h-24 card-hover"><img src="images/badge1.png" alt="Badge" class="max-h-full object-contain"></div>
+      <div class="bg-white p-2 rounded-xl shadow-md flex items-center justify-center h-24 card-hover"><img src="images/badge2.png" alt="Badge" class="max-h-full object-contain"></div>
+      <div class="bg-white p-2 rounded-xl shadow-md flex items-center justify-center h-24 card-hover"><img src="images/badge3.png" alt="Badge" class="max-h-full object-contain"></div>
+      <div class="bg-white p-2 rounded-xl shadow-md flex items-center justify-center h-24 card-hover"><img src="images/badge4.png" alt="Badge" class="max-h-full object-contain"></div>
+      <div class="bg-white p-2 rounded-xl shadow-md flex items-center justify-center h-24 card-hover"><img src="images/badge5.png" alt="Badge" class="max-h-full object-contain"></div>
+      <div class="bg-white p-2 rounded-xl shadow-md flex items-center justify-center h-24 card-hover"><img src="images/badge6.png" alt="Badge" class="max-h-full object-contain"></div>
+      <div class="bg-white p-2 rounded-xl shadow-md flex items-center justify-center h-24 card-hover"><img src="images/badge7.png" alt="Badge" class="max-h-full object-contain"></div>
+      <div class="bg-white p-2 rounded-xl shadow-md flex items-center justify-center h-24 card-hover"><img src="images/badge8.png" alt="Badge" class="max-h-full object-contain"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="bg-gray-900 text-white mt-12 py-16 px-6">
+  <div class="max-w-4xl mx-auto text-center space-y-10">
+    <h2 class="text-4xl font-bold text-blue-400">Get In Touch</h2>
+    <div class="flex flex-wrap justify-center gap-10 text-lg font-semibold">
+      <a href="mailto:michaelakpan216@gmail.com" class="hover:text-blue-300 transition-colors">📧 michaelakpan216@gmail.com</a>
+      <a href="https://www.linkedin.com/in/michael-akpan-326b132b9/" target="_blank" class="hover:text-blue-300 transition-colors">🔗 LinkedIn Profile</a>
+      <a href="tel:+2347039731987" class="hover:text-blue-300 transition-colors">📞 +234 703 973 1987</a>
+    </div>
+    <div class="pt-10 border-t border-gray-800 opacity-50 text-sm">
+      <p>&copy; 2026 Michael Akpan. All Rights Reserved. Built with Tailwind CSS & .NET Principles.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
